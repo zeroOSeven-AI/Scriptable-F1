@@ -1,0 +1,34 @@
+{
+  "config": {
+    "season": "2026",
+    "designer": "ZeroO7even",
+    "version": "1.0-Universe"
+  },
+  "endpoints": {
+    "drivers": "https://www.formula1.com/en/drivers/",
+    "teams": "https://www.formula1.com/en/teams/",
+    "tracks": "https://www.formula1.com/en/racing/2026/"
+  },
+  "mapping": {
+    "VER": "max-verstappen",
+    "HAM": "lewis-hamilton",
+    "NOR": "lando-norris",
+    "LEC": "charles-leclerc",
+    "SAI": "carlos-sainz",
+    "PIA": "oscar-piastri",
+    "RUS": "george-russell",
+    "PER": "sergio-perez",
+    "ALO": "fernando-alonso",
+    "GAS": "pierre-gasly",
+    "Red Bull": "red-bull-racing",
+    "Ferrari": "ferrari",
+    "Mercedes": "mercedes",
+    "McLaren": "mclaren",
+    "Aston Martin": "aston-martin",
+    "Alpine": "alpine",
+    "Haas": "haas-f1-team",
+    "Williams": "williams",
+    "RB": "rb",
+    "Sauber": "sauber"
+  }
+}
