@@ -8,7 +8,7 @@ from urllib.parse import urljoin
 # CONFIGURATION & CONSTANTS
 # ==========================================
 BASE_DIR = "F1 Circuits"
-CIRCUITS_FOLDER = os.path.join(BASE_DIR, "circuits_2026")
+CIRCUITS_FOLDER = os.path.join(BASE_DIR, "circuits")
 LINKS_JSON_PATH = os.path.join(BASE_DIR, "circuits_link.json")
 
 HEADERS = {
