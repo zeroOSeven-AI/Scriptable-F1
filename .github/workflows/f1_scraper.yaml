@@ -38,10 +38,10 @@ jobs:
         git config --local user.name "GitHub Action"
         
         # Provjera postoji li mapa uopće prije nego je dodaš u Git
-        if [ -d "F1 Circuits/circuits_2026" ]; then
-          git add "F1 Circuits/circuits_2026/"
+        if [ -d "F1 Circuits/circuits" ]; then
+          git add "F1 Circuits/circuits/"
           git commit -m "Automated update: F1 Circuit maps" || echo "No changes to commit"
           git push
         else
-          echo "Warning: F1 Circuits/circuits_2026 directory was not created. No images to commit."
+          echo "Warning: F1 Circuits/circuits directory was not created. No images to commit."
         fi
