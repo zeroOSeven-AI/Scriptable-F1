@@ -1,0 +1,34 @@
+# F1 Circuits Project Blueprint
+project:
+  name: "F1 Circuits Modular Scraper"
+  version: "2026.2.0"
+  architecture: "Data-Driven / JSON Configured"
+  description: "Modular Python scraper that reads target sources from a JSON file and downloads assets."
+
+file_structure:
+  root_directory: "F1 Circuits/"
+  files:
+    executable: "F1 Circuits/f1_circuits.py"
+    configuration: "F1 Circuits/circuits_link.json"
+    blueprint: "F1 Circuits/circuits_config.yaml"
+  output:
+    circuits_images: "F1 Circuits/circuits_2026/"
+
+json_data_contract:
+  root_key: "scraper_sources"
+  required_keys:
+    - "circuits_page_2026" # URL se čita isključivo iz JSON-a pod ovim ključem
+
+python_modules:
+  - name: "JSON & FILE UTILITIES"
+    responsibility: "Inicijalizacija mapa i čitanje ulaznih linkova iz JSON-a"
+  - name: "NETWORK & DOWNLOAD CORE"
+    responsibility: "Čisti HTTP zahtjevi i spremanje binarnih datoteka (slika) na disk"
+  - name: "PARSING & SCRAPING LOGIC"
+    responsibility: "Obrada HTML-a i pronalaženje elemenata (BeautifulSoup selektori)"
+  - name: "PIPELINE EXECUTION"
+    responsibility: "Glavni orkestrator koji povezuje sve korake u logički slijed"
+
+output_specifications:
+  format: "PNG"
+  naming: "lowercase_with_underscores"
