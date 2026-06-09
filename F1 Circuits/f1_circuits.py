@@ -1,109 +1,145 @@
 import os
+import json
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
-# Setup headers to mimic a real browser browse
+# ==========================================
+# CONFIGURATION & CONSTANTS
+# ==========================================
+BASE_DIR = "F1 Circuits"
+CIRCUITS_FOLDER = os.path.join(BASE_DIR, "circuits_2026")
+LINKS_JSON_PATH = os.path.join(BASE_DIR, "circuits_link.json")
+
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 }
 
-def create_folder(folder_name):
-    if not os.path.exists(folder_name):
-        os.makedirs(folder_name)
-        print(f"[INFO] Created folder: {folder_name}")
+# ==========================================
+# FILE & DIRECTORY UTILITIES
+# ==========================================
+def initialize_environment():
+    """Initializes required folders and configurations."""
+    if not os.path.exists(CIRCUITS_FOLDER):
+        os.makedirs(CIRCUITS_FOLDER)
+        print(f"[INFO] Created circuits directory at: {CIRCUITS_FOLDER}")
 
-def download_image(url, folder, filename):
+def load_stored_links():
+    """Loads backup/override links from JSON file if it exists."""
+    if os.path.exists(LINKS_JSON_PATH):
+        try:
+            with open(LINKS_JSON_PATH, 'r', encoding='utf-8') as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            print(f"[WARNING] Error reading {LINKS_JSON_PATH}. Starting with empty links mapping.")
+    return {}
+
+def save_links_to_json(links_dict):
+    """Saves scraped or manual layout links to JSON file for future reference."""
     try:
-        response = requests.get(url, headers=HEADERS, stream=True)
+        # Merge with existing data if present
+        existing_data = load_stored_links()
+        existing_data.update(links_dict)
+        
+        with open(LINKS_JSON_PATH, 'w', encoding='utf-8') as f:
+            json.dump(existing_data, f, indent=4, ensure_ascii=False)
+        print(f"[INFO] Circuit links successfully mapped and saved to {LINKS_JSON_PATH}")
+    except Exception as e:
+        print(f"[ERROR] Failed to save links to JSON: {e}")
+
+# ==========================================
+# NETWORK & DOWNLOAD CORE
+# ==========================================
+def fetch_page_html(url):
+    """Fetches the raw HTML content of a given URL."""
+    try:
+        response = requests.get(url, headers=HEADERS, timeout=15)
         if response.status_code == 200:
-            filepath = os.path.join(folder, filename)
-            with open(filepath, 'wb') as f:
+            return response.text
+        print(f"[ERROR] HTTP Status {response.status_code} for URL: {url}")
+    except Exception as e:
+        print(f"[EXCEPTION] Failed to connect to {url}: {e}")
+    return None
+
+def download_binary_file(url, destination_path):
+    """Downloads an asset (image/track map) and stores it locally."""
+    try:
+        response = requests.get(url, headers=HEADERS, stream=True, timeout=15)
+        if response.status_code == 200:
+            with open(destination_path, 'wb') as f:
                 for chunk in response.iter_content(1024):
                     f.write(chunk)
-            print(f"[SUCCESS] Downloaded: {filename}")
-        else:
-            print(f"[ERROR] Failed to download {filename} (Status code: {response.status_code})")
+            print(f"[SUCCESS] Downloaded asset to: {destination_path}")
+            return True
+        print(f"[ERROR] Failed to download asset from {url} (Status: {response.status_code})")
     except Exception as e:
-        print(f"[EXCEPTION] Error downloading {filename}: {e}")
+        print(f"[EXCEPTION] Error during asset download: {e}")
+    return False
 
-def scrape_f1_drivers():
-    print("\n--- Scraping F1 Drivers ---")
-    url = "https://www.formula1.com/en/drivers.html"
-    folder = "f1_drivers"
-    create_folder(folder)
+# ==========================================
+# PARSING & SCRAPING LOGIC
+# ==========================================
+def parse_circuit_elements(html_content, base_url):
+    """Parses circuit details and map image URLs from raw HTML."""
+    soup = BeautifulSoup(html_content, 'html.parser')
+    circuit_data = {}
     
-    response = requests.get(url, headers=HEADERS)
-    if response.status_code != 200:
-        print(f"[ERROR] Cannot access drivers page: {response.status_code}")
-        return
-        
-    soup = BeautifulSoup(response.text, 'html.parser')
+    # Target elements on the Formula 1 race calendar overview page
+    elements = soup.select('.event-item-wrapper') or soup.find_all('fieldset', class_='listing-item')
     
-    # Find all driver containers (based on F1 website structure)
-    drivers = soup.find_all('fieldset', class_='listing-item')
-    
-    if not drivers:
-        # Fallback to alternative selector if layout changed slightly
-        drivers = soup.select('.col-12 .listing-item')
-
-    for driver in drivers:
+    for element in elements:
         try:
-            # Extract driver name
-            first_name = driver.find('span', class_='fname').text.strip()
-            last_name = driver.find('span', class_='lname').text.strip()
-            driver_name = f"{first_name}_{last_name}".lower().replace(" ", "_")
-            
-            # Extract image URL
-            img_tag = driver.find('img')
-            if img_tag and 'src' in img_tag.attrs:
-                img_url = img_tag['src']
-                # Clean up URL if it's relative or has resizing parameters
-                img_url = urljoin(url, img_url)
-                
-                filename = f"{driver_name}.png"
-                download_image(img_url, folder, filename)
-        except AttributeError:
-            continue
-
-def scrape_f1_circuits():
-    print("\n--- Scraping F1 Circuits ---")
-    url = "https://www.formula1.com/en/racing/2026.html" # Updated for the current 2026 season
-    folder = "f1_circuits"
-    create_folder(folder)
-    
-    response = requests.get(url, headers=HEADERS)
-    if response.status_code != 200:
-        print(f"[ERROR] Cannot access circuits page: {response.status_code}")
-        return
-        
-    soup = BeautifulSoup(response.text, 'html.parser')
-    
-    # Find all circuit cards
-    circuits = soup.select('.event-item-wrapper')
-    
-    for circuit in circuits:
-        try:
-            # Extract country or circuit name
-            country_tag = circuit.find('span', class_='event-place')
-            if not country_tag:
+            place_tag = element.find('span', class_='event-place')
+            if not place_tag:
                 continue
                 
-            circuit_name = country_tag.text.strip().lower().replace(" ", "_")
+            circuit_name = place_tag.text.strip().lower().replace(" ", "_")
             
-            # Find the circuit outline image
-            img_tag = circuit.find('img', class_='lazy') or circuit.find('img')
+            img_tag = element.find('img', class_='lazy') or element.find('img')
             if img_tag:
                 img_url = img_tag.get('data-src') or img_tag.get('src')
                 if img_url:
-                    img_url = urljoin(url, img_url)
-                    filename = f"{circuit_name}.png"
-                    download_image(img_url, folder, filename)
+                    full_img_url = urljoin(base_url, img_url)
+                    circuit_data[circuit_name] = full_img_url
         except Exception as e:
-            print(f"[WARNING] Skipping a circuit due to error: {e}")
+            print(f"[WARNING] Skipping a component during parsing due to error: {e}")
+            
+    return circuit_data
+
+# ==========================================
+# PIPELINE EXECUTION
+# ==========================================
+def run_circuit_scraper_pipeline():
+    """Main execution orchestrator for the circuit scraper."""
+    initialize_environment()
+    
+    target_url = "https://www.formula1.com/en/racing/2026.html"
+    print(f"[START] Fetching schedule data from: {target_url}")
+    
+    html = fetch_page_html(target_url)
+    if not html:
+        print("[ABORT] Could not retrieve schedule overview page. Checking local JSON as fallback...")
+        scraped_links = load_stored_links()
+    else:
+        scraped_links = parse_circuit_elements(html, target_url)
+        if scraped_links:
+            save_links_to_json(scraped_links)
+    
+    if not scraped_links:
+        print("[FINISHED] No circuit maps found to process.")
+        return
+
+    print(f"\n[PROCESS] Processing {len(scraped_links)} track layouts...")
+    for circuit_name, image_url in scraped_links.items():
+        filename = f"{circuit_name}.png"
+        full_dest_path = os.path.join(CIRCUITS_FOLDER, filename)
+        
+        print(f"[DOWNLOAD] Retrieving layout for: {circuit_name}")
+        download_binary_file(image_url, full_dest_path)
 
 if __name__ == "__main__":
-    print("=== F1 Asset Downloader for Scriptable ===")
-    scrape_f1_drivers()
-    scrape_f1_circuits()
-    print("\n=== Process Finished ===")
+    print("==========================================")
+    print("F1 CIRCUIT ASSET MANAGEMENT PIPELINE")
+    print("==========================================")
+    run_circuit_scraper_pipeline()
+    print("==========================================")
