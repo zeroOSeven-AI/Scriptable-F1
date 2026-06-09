@@ -27,10 +27,8 @@ def initialize_environment():
 def load_json_config():
     """Loads the entire configuration from the JSON file."""
     if not os.path.exists(LINKS_JSON_PATH):
+        # Ako file ne postoji, kreira se prazna šablona u koju dodaješ linkove
         default_data = {
-            "scraper_sources": {
-                "circuits_page_2026": "https://www.formula1.com/en/racing/2026.html"
-            },
             "direct_circuit_maps": {}
         }
         os.makedirs(BASE_DIR, exist_ok=True)
@@ -43,7 +41,7 @@ def load_json_config():
             return json.load(f)
     except Exception as e:
         print(f"[ERROR] Failed to read JSON configuration: {e}")
-        return {"scraper_sources": {}, "direct_circuit_maps": {}}
+        return {"direct_circuit_maps": {}}
 
 # ==========================================
 # NETWORK & DOWNLOAD CORE
@@ -64,36 +62,6 @@ def download_binary_file(url, destination_path):
     return False
 
 # ==========================================
-# PARSING & SCRAPING LOGIC (FALLBACK)
-# ==========================================
-def scrape_fallback_maps(url):
-    """Fallback parser to try and find maps from the main F1 HTML page."""
-    try:
-        response = requests.get(url, headers=HEADERS, timeout=15)
-        if response.status_code != 200:
-            return []
-        
-        soup = BeautifulSoup(response.text, 'html.parser')
-        extracted = []
-        
-        # Tražimo bilo koje slike koje sadrže riječ 'track' ili 'circuit' u linku
-        for img in soup.find_all('img'):
-            src = img.get('data-src') or img.get('src') or img.get('data-original')
-            if src and ('track' in src or 'circuit' in src) and not src.endswith('.svg'):
-                # Pokušavamo izvući ime staze iz samog URL-a slike
-                filename_part = src.split('/')[-1].split('.')[0].lower()
-                clean_name = filename_part.replace('2026track', '').replace('detailed', '')
-                if not clean_name:
-                    clean_name = "unknown_circuit"
-                
-                full_url = urljoin(url, src)
-                extracted.append((clean_name, full_url))
-        return extracted
-    except Exception as e:
-        print(f"[WARNING] Fallback scraper encountered an issue: {e}")
-        return []
-
-# ==========================================
 # PIPELINE EXECUTION
 # ==========================================
 def run_circuit_scraper_pipeline():
@@ -102,43 +70,29 @@ def run_circuit_scraper_pipeline():
     config = load_json_config()
     
     direct_maps = config.get("direct_circuit_maps", {})
-    sources = config.get("scraper_sources", {})
     
-    all_assets_to_download = {}
-
-    # 1. FAZA: Učitaj fiksne linkove iz JSON-a (Ovo povlači tvoj novi link za Španjolsku!)
-    if direct_maps:
-        print(f"[PROCESS] Found {len(direct_maps)} direct map URLs in JSON.")
-        for name, url in direct_maps.items():
-            all_assets_to_download[name] = url
-
-    # 2. FAZA: Pokreni scraper za ostale karte kao dodatak
-    target_url = sources.get("circuits_page_2026")
-    if target_url:
-        print(f"[START] Running fallback scraper on: {target_url}")
-        scraped_assets = scrape_fallback_maps(target_url)
-        for name, url in scraped_assets:
-            if name not in all_assets_to_download: # JSON ima prednost pred scraperom
-                all_assets_to_download[name] = url
-
-    # 3. FAZA: Preuzimanje slika na disk
-    if not all_assets_to_download:
-        print("[FINISHED] No circuit maps available to download.")
+    if not direct_maps:
+        print(f"[FINISHED] No direct maps configured in {LINKS_JSON_PATH}. Add links there first!")
         return
 
-    print(f"\n[DOWNLOAD] Starting download of {len(all_assets_to_download)} layouts...")
-    for circuit_name, image_url in all_assets_to_download.items():
-        # Ako je link .webp spremamo kao .webp, ako je .png kao .png
-        ext = "webp" if "webp" in image_url.lower() else "png"
+    print(f"\n[DOWNLOAD] Starting download of {len(direct_maps)} layouts from JSON...")
+    for circuit_name, image_url in direct_maps.items():
+        # Automatsko prepoznavanje ekstenzije iz samog linka (.webp, .png, .jpg)
+        ext = "png"
+        if "webp" in image_url.lower():
+            ext = "webp"
+        elif "jpg" in image_url.lower() or "jpeg" in image_url.lower():
+            ext = "jpg"
+            
         filename = f"{circuit_name}.{ext}"
         full_dest_path = os.path.join(CIRCUITS_FOLDER, filename)
         
-        print(f"[PROCESSING] Layout for: {circuit_name}")
+        print(f"[PROCESSING] Downloading: {circuit_name} -> {filename}")
         download_binary_file(image_url, full_dest_path)
 
 if __name__ == "__main__":
     print("==========================================")
-    print("F1 CIRCUIT ASSET MANAGEMENT PIPELINE v2")
+    print("F1 CIRCUIT ASSET MANAGEMENT PIPELINE v3")
     print("==========================================")
     run_circuit_scraper_pipeline()
     print("==========================================")
