@@ -1,6 +1,6 @@
 {
     "scraper_sources": {
-        "circuits_page_2026": "https://www.formula1.com/en/racing/2026.html"
+        "circuits_page_2026": "https://www.formula1.com/en/racing/2026"
     },
     "direct_circuit_maps": {
         "spain": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp"
