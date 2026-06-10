@@ -1,0 +1,44 @@
+{
+  "circuits": {
+    "bahrain": {
+      "name": "Bahrain International Circuit",
+      "country": "Bahrain",
+      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksakhirdetailed.webp"
+    },
+    "australia_melbourne": {
+      "name": "Melbourne Grand Prix Circuit",
+      "country": "Australia",
+      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmelbournedetailed.webp"
+    },
+    "china_shanghai": {
+      "name": "Shanghai International Circuit",
+      "country": "China",
+      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackshanghaidetailed.webp"
+    },
+    "japan_suzuka": {
+      "name": "Suzuka Circuit",
+      "country": "Japan",
+      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksuzukadetailed.webp"
+    },
+    "usa_miami": {
+      "name": "Miami International Autodrome",
+      "country": "USA",
+      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmiamidetailed.webp"
+    },
+    "spain_barcelona": {
+      "name": "Circuit de Barcelona-Catalunya",
+      "country": "Spain",
+      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp"
+    },
+    "spain_madrid": {
+      "name": "Madrid Street Circuit",
+      "country": "Spain",
+      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmadringdetailed.webp"
+    },
+    "monaco": {
+      "name": "Circuit de Monaco",
+      "country": "Monaco",
+      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontecarlodetailed.webp"
+    }
+  }
+}
