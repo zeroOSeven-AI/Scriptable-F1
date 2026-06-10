@@ -1,51 +1,28 @@
 {
   "direct_circuit_maps": {
     "bahrain": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/bahrain.webp",
-
-    "australia_melbourne": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/australia_melbourne.webp",
-
-    "china_shanghai": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/china_shanghai.webp",
-
-    "japan_suzuka": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/japan_suzuka.webp",
-
-    "usa_miami": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/usa_miami.webp",
-
-    "italy_imola": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/italy_imola.webp",
-
+    "albert_park": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/australia_melbourne.webp",
+    "shanghai": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/china_shanghai.webp",
+    "suzuka": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/japan_suzuka.webp",
+    "miami": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/usa_miami.webp",
+    "imola": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/italy_imola.webp",
     "monaco": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/monaco.webp",
-
-    "canada_montreal": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/canada_montreal.webp",
-
-    "spain_barcelona": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/spain_barcelona.webp",
-
-    "austria_spielberg": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/austria_spielberg.webp",
-
-    "great_britain_silverstone": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/great_britain_silverstone.webp",
-
-    "belgium_spa": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/belgium_spa.webp",
-
-    "hungary_budapest": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/hungary_budapest.webp",
-
-    "netherlands_zandvoort": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/netherlands_zandvoort.webp",
-
-    "italy_monza": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/italy_monza.webp",
-
-    "azerbaijan_baku": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/azerbaijan_baku.webp",
-
-    "singapore_marina_bay": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/singapore_marina_bay.webp",
-
-    "usa_austin": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/usa_austin.webp",
-
-    "mexico_city": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/mexico_city.webp",
-
-    "brazil_interlagos": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/brazil_interlagos.webp",
-
-    "usa_las_vegas": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/usa_las_vegas.webp",
-
-    "qatar_lusail": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/qatar_lusail.webp",
-
-    "abu_dhabi_yas_marina": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/abu_dhabi_yas_marina.webp",
-
-    "spain_madrid": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/spain_madrid.webp"
+    "villeneuve": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/canada_montreal.webp",
+    "catalunya": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/spain_barcelona.webp",
+    "red_bull_ring": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/austria_spielberg.webp",
+    "silverstone": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/great_britain_silverstone.webp",
+    "spa": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/belgium_spa.webp",
+    "hungaroring": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/hungary_budapest.webp",
+    "zandvoort": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/netherlands_zandvoort.webp",
+    "monza": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/italy_monza.webp",
+    "baku": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/azerbaijan_baku.webp",
+    "marina_bay": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/singapore_marina_bay.webp",
+    "americas": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/usa_austin.webp",
+    "rodriguez": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/mexico_city.webp",
+    "interlagos": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/brazil_interlagos.webp",
+    "vegas": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/usa_las_vegas.webp",
+    "losail": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/qatar_lusail.webp",
+    "yas_marina": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/abu_dhabi_yas_marina.webp",
+    "madrid": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/spain_madrid.webp"
   }
 }
