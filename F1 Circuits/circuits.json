@@ -1,44 +1,26 @@
 {
-  "circuits": {
-    "bahrain": {
-      "name": "Bahrain International Circuit",
-      "country": "Bahrain",
-      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksakhirdetailed.webp"
-    },
-    "australia_melbourne": {
-      "name": "Melbourne Grand Prix Circuit",
-      "country": "Australia",
-      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmelbournedetailed.webp"
-    },
-    "china_shanghai": {
-      "name": "Shanghai International Circuit",
-      "country": "China",
-      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackshanghaidetailed.webp"
-    },
-    "japan_suzuka": {
-      "name": "Suzuka Circuit",
-      "country": "Japan",
-      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksuzukadetailed.webp"
-    },
-    "usa_miami": {
-      "name": "Miami International Autodrome",
-      "country": "USA",
-      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmiamidetailed.webp"
-    },
-    "spain_barcelona": {
-      "name": "Circuit de Barcelona-Catalunya",
-      "country": "Spain",
-      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp"
-    },
-    "spain_madrid": {
-      "name": "Madrid Street Circuit",
-      "country": "Spain",
-      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmadringdetailed.webp"
-    },
-    "monaco": {
-      "name": "Circuit de Monaco",
-      "country": "Monaco",
-      "image": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontecarlodetailed.webp"
-    }
-  }
+  "bahrain": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/bahrain.webp",
+  "australia_melbourne": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/australia_melbourne.webp",
+  "china_shanghai": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/china_shanghai.webp",
+  "japan_suzuka": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/japan_suzuka.webp",
+  "usa_miami": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/usa_miami.webp",
+  "usa_austin": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/usa_austin.webp",
+  "usa_las_vegas": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/usa_las_vegas.webp",
+  "italy_imola": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/italy_imola.webp",
+  "italy_monza": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/italy_monza.webp",
+  "monaco": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/monaco.webp",
+  "spain_barcelona": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/spain_barcelona.webp",
+  "spain_madrid": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/spain_madrid.webp",
+  "canada_montreal": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/canada_montreal.webp",
+  "austria_spielberg": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/austria_spielberg.webp",
+  "great_britain_silverstone": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/great_britain_silverstone.webp",
+  "belgium_spa": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/belgium_spa.webp",
+  "hungary_budapest": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/hungary_budapest.webp",
+  "netherlands_zandvoort": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/netherlands_zandvoort.webp",
+  "azerbaijan_baku": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/azerbaijan_baku.webp",
+  "singapore_marina_bay": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/singapore_marina_bay.webp",
+  "mexico_city": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/mexico_city.webp",
+  "brazil_interlagos": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/brazil_interlagos.webp",
+  "qatar_lusail": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/qatar_lusail.webp",
+  "abu_dhabi_yas_marina": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1 Circuits/circuits/abu_dhabi_yas_marina.webp"
 }
