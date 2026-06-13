@@ -1,4 +1,4 @@
-name: Run F1 Circuits Scraper
+name: F1 Circuits Scraper
 
 on:
   workflow_dispatch:
