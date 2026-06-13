@@ -37,9 +37,9 @@ def load_driver_links():
         return {}
 
 def crop_url_for_icon(url):
-    """Modifies the F1 CDN URL to auto-crop the face into a 400x400 square."""
+    """Modifies the F1 CDN URL to auto-crop the face into a 600x600 square."""
     if "c_fill" in url:
-        return url.replace("c_fill,w_720", "c_fill,g_face,w_400,h_400")
+        return url.replace("c_fill,w_720", "c_fill,g_face,w_600,h_600")
     return url
 
 def download_binary_file(url, destination_path):
