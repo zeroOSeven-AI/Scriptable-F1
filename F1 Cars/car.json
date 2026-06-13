@@ -1,0 +1,15 @@
+{
+  "team_cars": {
+    "mercedes": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Cars/cars/mercedes.webp",
+    "ferrari": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Cars/cars/ferrari.webp",
+    "mclaren": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Cars/cars/mclaren.webp",
+    "red_bull_racing": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Cars/cars/red_bull_racing.webp",
+    "alpine": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Cars/cars/alpine.webp",
+    "racing_bulls": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Cars/cars/racing_bulls.webp",
+    "haas": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Cars/cars/haas.webp",
+    "williams": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Cars/cars/williams.webp",
+    "audi": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Cars/cars/audi.webp",
+    "aston_martin": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Cars/cars/aston_martin.webp",
+    "cadillac": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Cars/cars/cadillac.webp"
+  }
+}
