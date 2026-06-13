@@ -30,7 +30,6 @@ def load_driver_links():
     try:
         with open(LINKS_JSON_PATH, 'r', encoding='utf-8') as f:
             data = json.load(f)
-            # Podržava ako je omotano u objekt ili ako je čisti rječnik
             return data.get("driver_headshots", data)
     except Exception as e:
         print(f"[ERROR] Failed to read JSON configuration: {e}")
