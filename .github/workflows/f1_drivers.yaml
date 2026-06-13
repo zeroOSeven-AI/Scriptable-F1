@@ -5,8 +5,7 @@ on:
     # Pokreće se automatski svaki tjedan u nedjelju u 04:00 ujutro
     - cron: '0 4 * * 0'
   workflow_dispatch:
-    # Omogućuje ti da sam klikneš "Run workflow" u GitHub Actions tabu kad god poželiš
-
+  
 jobs:
   scrape-and-crop:
     runs-on: ubuntu-latest
