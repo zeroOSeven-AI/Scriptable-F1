@@ -1,0 +1,37 @@
+{
+  "driver_headshots": {
+
+    "russell": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/george_russell.webp",
+    "antonelli": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/kimi_antonelli.webp",
+
+    "leclerc": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/charles_leclerc.webp",
+    "hamilton": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/lewis_hamilton.webp",
+
+    "norris": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/lando_norris.webp",
+    "piastri": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/oscar_piastri.webp",
+
+    "verstappen": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/max_verstappen.webp",
+    "hadjar": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/isack_hadjar.webp",
+
+    "gasly": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/pierre_gasly.webp",
+    "colapinto": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/franco_colapinto.webp",
+
+    "lawson": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/liam_lawson.webp",
+    "lindblad": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/arvid_lindblad.webp",
+
+    "ocon": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/esteban_ocon.webp",
+    "bearman": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/oliver_bearman.webp",
+
+    "sainz": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/carlos_sainz.webp",
+    "albon": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/alexander_albon.webp",
+
+    "hulkenberg": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/nico_hulkenberg.webp",
+    "bortoleto": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/gabriel_bortoleto.webp",
+
+    "alonso": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/fernando_alonso.webp",
+    "stroll": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/lance_stroll.webp",
+
+    "perez": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/sergio_perez.webp",
+    "bottas": "https://raw.githubusercontent.com/zeroOSeven-AI/Scriptable-F1/main/F1%20Drivers/drivers/valtteri_bottas.webp"
+  }
+}
